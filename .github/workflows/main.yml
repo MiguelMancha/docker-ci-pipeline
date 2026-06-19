@@ -26,7 +26,7 @@ jobs:
       run: |
         pytest --cov=app test_app.py --cov-report=term-missing
 
-    # ========================================================
+# ========================================================
     # PASO NUEVO: TU VALIDATOR DE COMPILACIÓN (DOCKER BUILD / BAKE)
     # ========================================================
     - name: Configurar Docker Buildx
@@ -37,15 +37,15 @@ jobs:
       with:
         context: .
         file: ./Dockerfile
-        check: true # <-- Esto hace las comprobaciones de compilación sin subir nada
+        # Nota: Quitamos la línea de "check: true" para que la versión v5 
+        # no tire Warning. Al no llevar "push: true", solo valida la sintaxis.
 
     - name: Validar matriz de compilación con Docker Bake Check
       uses: docker/bake-action@v3
       with:
         source: .
-        check: true # <-- Realiza la comprobación con docker/bake
+        check: true # <-- En Bake sí dejamos el check: true porque es totalmente válido
     # ========================================================
-
     - name: Iniciar sesión en Docker Hub
       uses: docker/login-action@v3
       with:

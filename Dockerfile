@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Usar una imagen base liviana de Python
 FROM python:3.10-slim
 
@@ -16,7 +15,7 @@ COPY . .
 
 # Comando por defecto para ejecutar el script
 CMD ["python", "main.py"]
-=======
+
 FROM python:3.10-slim
 
 WORKDIR /app
@@ -27,4 +26,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD ["python", "app.py"]
->>>>>>> 93e6396cc7f105ed81dad9ce2c499bbbd9e55160
+93e6396cc7f105ed81dad9ce2c499bbbd9e55160
