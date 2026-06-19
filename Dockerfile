@@ -26,4 +26,3 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD ["python", "app.py"]
-93e6396cc7f105ed81dad9ce2c499bbbd9e55160
