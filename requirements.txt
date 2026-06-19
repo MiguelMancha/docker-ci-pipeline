@@ -1,2 +1,6 @@
+<<<<<<< HEAD
+wheel==0.43.0
+=======
 pytest==8.2.0
 pytest-cov==5.0.0
+>>>>>>> 93e6396cc7f105ed81dad9ce2c499bbbd9e55160
